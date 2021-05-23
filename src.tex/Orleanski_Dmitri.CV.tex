@@ -1,0 +1,72 @@
+% Author: Dmitri Orleanski
+% Email: <orleanski@gmail.com>
+% Version Date [YYYY-MM-DD]: 2021-05-22
+% pdflatex Orleanski_Dmitri.CV.tex
+%
+
+\documentclass[11pt,letter]{moderncv}
+
+% moderncv themes
+%\moderncvtheme[blue]{casual}                 % optional argument are 'blue' (default), 'orange', 'red', 'green', 'grey' and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvtheme[green]{classic}                % idem
+%\moderncvtheme[blue]{classic}
+\moderncvtheme[grey]{classic}
+%\moderncvtheme[red]{classic}
+
+% character encoding
+\usepackage[utf8]{inputenc}                   % replace by the encoding you are using
+%\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+% adjust the page margins
+\usepackage[letterpaper,left=1.5cm,right=1.0cm,top=1.0cm,bottom=1.0cm]{geometry}
+%\usepackage[scale=0.9]{geometry}
+%\renewcommand{\rmdefault}{ptm}		%define font for the whole document
+
+%\setlength{\hintscolumnwidth}{3cm}						% if you want to change the width of the column with the dates
+%\AtBeginDocument{\setlength{\maketitlenamewidth}{6cm}}  % only for the classic theme, if you want to change the width of your name placeholder (to leave more space for your address details
+\AtBeginDocument{\recomputelengths}                     % required when changes are made to page layout lengths
+
+% personal data
+\firstname{Dmitri}
+\familyname{Orleanski,MD}
+%\title{HOSPITALIST, INTERNIST, CRITICAL CARE}               % optional, remove the line if not wanted
+\title{INTERNIST / CRITICAL CARE}               % optional, remove the line if not wanted
+%\title{\normalsize AAMC ID: 12162401\\USMLE ID: 0-649-253-2}               % optional, remove the line if not wanted
+\address{P.O. Box LBJ}{Pago Pago, AS 96799}    % optional, remove the line if not wanted
+\mobile{684-272-3804}                    % optional, remove the line if not wanted
+%\mobile{469-556-0875}                    % optional, remove the line if not wanted
+\phone{684-633-1222}                      % optional, remove the line if not wanted
+%\fax{fax (optional)}                          % optional, remove the line if not wanted
+\email{orleanski@gmail.com}                      % optional, remove the line if not wanted
+%\homepage{homepage (optional)}                % optional, remove the line if not wanted
+%\extrainfo{additional information (optional)} % optional, remove the line if not wanted
+%\photo[64pt]{picture}                         % '64pt' is the height the picture must be resized to and 'picture' is the name of the picture file; optional, remove the line if not wanted
+%\quote{Leaving ground, destination is unknown, in to the darkness and far away from home}                 % optional, remove the line if not wanted
+
+% to show numerical labels in the bibliography; only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+
+%\nopagenumbers{}                             % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%            content
+%================================================
+\begin{document}
+\maketitle
+%\input{inc.Objectives.tex}
+\input{inc.Education.tex}
+%{{{-| Page brake |
+% Make a page brake, just \newpage does not work here
+\closesection
+\emptysection
+\newpage
+%}}}
+\input{inc.Experience.tex}
+\input{inc.CompLangLegal.tex}
+\end{document}
+%% EOF
