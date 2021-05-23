@@ -1,6 +1,6 @@
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -30,9 +30,9 @@ jobs:
         uses: thomas-chauvet/latex2pdf-action@1.0.1
         with:
     # Output directory to store the pdf file.
-          output_dir: pdf # default is 
+          output_dir: pdf # default is
     # Main latex file to convert in PDF (for intance `cv.tex`).
           main_latex_file: src.tex/Orleanski_Dmitri.CV.tex # default is main.tex
-    # "Extra package from CTAN to install. List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive).  
+    # "Extra package from CTAN to install. List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive).
     # Each package must be separated by a space (ex: "moderncv xargs")."
-          ctan_packages: moderncv # optional
+          ctan_packages: colortbl moderncv # optional
