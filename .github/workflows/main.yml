@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CV Status
+name: CV.pdf compilation status
 
 # Controls when the action will run.
 on:
@@ -51,52 +51,27 @@ jobs:
         # Здесь это <working_directory>/<jobname>.pdf
             path: src.tex/Orleanski_Dmitri.CV.pdf
 
-  deploy:
-    runs-on: ubuntu-latest
-    # Деплой будет только на ветке master. Закомментируйте, если не надо
-    if: github.ref == 'refs/heads/release'
-    # Можно зависеть от любого другого job. Порядок выполнения будет подстраиваться.
-    needs: [build]
-    steps:
-      # Это хак, чтобы дергать bash-команды и запоминанать их результат
-      - name: Variables
-        # id используется внутренне: по нему можно ссылаться на результаты из другого step
-        id: vars
-        # echo в таком форматировании позволит впоследствии ссылаться на результаты через ${{ steps.<step_id>.outputs.<variable_name> }}
-        run: |
-          echo "::set-output name=date::$(date +'%Y-%m-%d')"
-          echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
+
+      - name: Update Release
+  # You may pin to the exact commit or the version.
+  # uses: johnwbyrd/update-release@1d5ec4791e40507e5eca3b4dbf90f0b27e7e4979
+        uses: johnwbyrd/update-release@v1.0.0
         with:
-          # Тот самый ключ, который мы указывали в upload-artifact
-          name: Orleanski_Dmitri.CV.pdf
-      - name: Create Release
-        uses: actions/create-release@v1
-        id: create_release
-        env:
-          # По офф.документации, надо указать GITHUB_TOKEN
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions
-        with:
-          # Берем результат из step с id=vars (см. выше). 
-          # Получим теги вида “my_doc-<дата билда>-<первые 8 символов из sha коммита>
-          tag_name: Orleanski_Dmitri.CV-${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha8 }}
-          # Имя, которое будет высвечиваться в релизе
-          release_name: My Actions document (version ${{ steps.vars.outputs.date }})
-          # Наш релиз не набросок и не пререлиз, так что оба в false
-          draft: false
-          prerelease: false
-      # Прикладываемые файлы надо заливать отдельным step
-      - name: Upload pdf asset
-        uses: actions/upload-release-asset@v1
-        env:
-          # Тоже требуется токен
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # Из предыдущего step с id=create_release генерится upload_url - по нему и надо заливать
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          # Не переходим в папку latex_sources, поскольку download-artifacts грузит в текущую директорию
-          asset_path: ./Orleanski_Dmitri.CV.pdf
-          # Имя, которое будет высвечиваться в релизе
-          asset_name: my_asset_name.pdf
-          asset_content_type: application/pdf
+    # Your Github token; try \$\{\{ secrets.GITHUB_TOKEN \}\} if your build lasts less than an hour, or create your own secret token with repository access if your build requires longer than an hour.
+          token:  ${{ secrets.GITHUB_TOKEN }}
+    # Paths to built files to be released. May be absolute or relative to \$\{\{ github.workspace \}\}.
+          files: pdf\
+    # The name of the release to be created. A reasonable looking release name will be created from the current \$\{\{ github.ref \}\} if this input is not supplied.
+          release: Orleanski_Dmitri.CV.pdf # optional
+    # The name of the tag to be used. If not provided, the name of the release will be used.
+          tag: release # optional
+    # A one-line description for both the tag and the release.
+          message: latest CV # optional
+    # A fuller description of the release.
+          body: Latest curriculum Vitae  # optional
+    # Should the release, if created, be marked as a prerelease?  Such releases are generally publicly visible.
+          prerelease: false # optional, default is true
+    # Should the release, if created, be marked as a draft?  Such releases are generally not publicly visible.
+          draft: false # optional
+          
+          
