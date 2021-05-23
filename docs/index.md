@@ -1,16 +1,16 @@
-# Welcome to my CV page
-
 ![Image](src)
 
 ## Profile
 
 ## Skills
+### Medical
 
+### Technical
 
 ## CV
 
 For more detailes, please see my 
-[Curriculum Vitae](https://github.com/orleanski/CV/releases/download/release/Orleanski_Dmitri.CV.pdf)
+[curriculum vitae](https://github.com/orleanski/CV/releases/download/release/Orleanski_Dmitri.CV.pdf)
 
 
 ## Support or Contact
