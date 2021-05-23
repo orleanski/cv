@@ -35,4 +35,4 @@ jobs:
           main_latex_file: src.tex/Orleanski_Dmitri.CV.tex # default is main.tex
     # "Extra package from CTAN to install. List of packages available [here](http://mirror.ctan.org/systems/texlive/tlnet/archive).
     # Each package must be separated by a space (ex: "moderncv xargs")."
-          ctan_packages: colortbl moderncv fontawesome5 luatexbase academicons # optional
+          ctan_packages: colortbl moderncv fontawesome5 luatexbase academicons tikz tikz-page  # optional
