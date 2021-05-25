@@ -1,0 +1,13 @@
+# Site settings
+title: Curriculum Vitae
+tag_text: CV
+description: Orleanski CV
+url: "https://orleanski.github.io/CV/"
+baseurl: "https://orleanski.github.io/CV/"
+
+font-awesome-include: true # make this false if you don't need font-awesome
+
+# Build settings
+markdown: kramdown
+
+exclude: ["README.md"]
