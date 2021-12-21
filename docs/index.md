@@ -1,5 +1,3 @@
-![Image](src)
-
 ## Professional Summary
 Dedicated astute physician with the skills and drive necessary to provide appropriate and adequate care for my patients.
 
@@ -20,4 +18,6 @@ For more detailes, please see my
 
 ## Support or Contact
 
-To import my contacts, please scan this QR code ![Image](src)
+To import my contacts, please scan this QR code 
+
+<img src="QR4CV.png" width="200">
