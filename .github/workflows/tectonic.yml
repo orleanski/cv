@@ -28,7 +28,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tectonic
-        run: tectonic Orleanski_Dmitri.CV.tex
+        run: tectonic src.tex/Orleanski_Dmitri.CV.tex
       - name: Upload pdf
         uses: actions/upload-artifact@v2
         with:
