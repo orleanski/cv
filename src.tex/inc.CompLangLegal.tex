@@ -5,9 +5,19 @@
 \newline -- Chest tube placement
 \newline -- EGD and colonoscopy [supervised]}
 \cvline{EHR/EMR:}{CareVue, CPRS, Medsphere, OpenVista, eClinicalWorks, Amazing Charts, Criterions}
-\cvline{Office:}{LibreOffice, MS Office, Adobe Acrobat Pro, Git}
+\cvline{Office:}{LibreOffice, MS Office, Adobe Acrobat Pro, Git, \LaTeX}
 \cvline{Other:}{Installed and maintained intranet knowledge base for LBJ TMC}
 %\cvcomputer{category 3}{XXX, YYY, ZZZ}{category 6}{XXX, YYY, ZZZ} %}}}
+
+% Publications {{{
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): 
+\renewcommand{\refname}{Publications}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX fileo
+%}}}
 
 \section{Languages}%{{{
 \cvline{English:}{Full academic and professional fluency both in written and speaking.}
