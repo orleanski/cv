@@ -1,4 +1,4 @@
-# My personal CV
+# My formal Curriculum vitae
 
 Curriculum Vitae with automated rebuild of the pdf as a release file, upon updates of LaTeX sources.
 
